@@ -1,0 +1,19 @@
+{
+  "name": "230407-datetime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JseopKim/230407-datetime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JseopKim/230407-datetime/issues"
+  },
+  "homepage": "https://github.com/JseopKim/230407-datetime#readme"
+}
