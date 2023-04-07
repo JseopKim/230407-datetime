@@ -1,11 +1,11 @@
 {
   "name": "230407-datetime",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JseopKim/230407-datetime.git"
@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/JseopKim/230407-datetime/issues"
   },
-  "homepage": "https://github.com/JseopKim/230407-datetime#readme"
+  "homepage": "https://github.com/JseopKim/230407-datetime#readme",
+  "description": ""
 }
