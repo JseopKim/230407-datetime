@@ -15,6 +15,7 @@ const html = {
     </html>
     `
   },
-  testData: `<h1>나는 김지섭이다.</h1>`
+  testData: `<h1>나는 김지섭이다.</h1>`,
+  rootData: `<script src="/style.js"></script>`
 }
 export default html;
