@@ -14,23 +14,21 @@ function flexSet(target, direc, justy, align) {
   target.style.alignItems = align;
 }
 
+const xhr = new XMLHttpRequest();
+xhr.open("GET", 'http://localhost:3050/start');
+xhr.send();
+// let res = xhr.response;
+xhr.addEventListener('load', function() {
+  console.log(xhr.response);
+})
+
+// let dateString = `
+//       ${nowYear}년 ${nowMonth}월 ${nowDay}일 ${nowHours}시 ${nowMinutes}분 ${nowSeconds}초 ${weekDay}
+//     `;
+
 function main() {
 
-  let nowDate = new Date();
-
-  let nowYear = nowDate.getFullYear();
-  let nowMonth = ('0' + (nowDate.getMonth() + 1)).slice(-2);
-  let nowDay = ('0' + nowDate.getDate()).slice(-2);
-  let week = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
-  let weekDay = week[nowDate.getDay()];
   
-  let nowHours = ('0' + nowDate.getHours()).slice(-2); 
-  let nowMinutes = ('0' + nowDate.getMinutes()).slice(-2);
-  let nowSeconds = ('0' + nowDate.getSeconds()).slice(-2); 
-  
-  let dateString = `
-    ${nowYear}년 ${nowMonth}월 ${nowDay}일 ${nowHours}시 ${nowMinutes}분 ${nowSeconds}초 ${weekDay}
-  `;
 
   let root = document.createElement('div');
   document.body.appendChild(root);
@@ -45,11 +43,5 @@ function main() {
   styleSet(timeBox, '100vw', '30vh', '#B0DAFF', '','20px', '60px','white');
   flexSet(timeBox,'row','center','center');
 
-  timeBox.innerHTML = dateString;
-
-  setTimeout(function() {
-    location.reload();
-  }, 1000);
 }
-
 main();
