@@ -14,21 +14,7 @@ function flexSet(target, direc, justy, align) {
   target.style.alignItems = align;
 }
 
-const xhr = new XMLHttpRequest();
-xhr.open("GET", 'http://localhost:3050/start');
-xhr.send();
-// let res = xhr.response;
-xhr.addEventListener('load', function() {
-  console.log(xhr.response);
-})
-
-// let dateString = `
-//       ${nowYear}년 ${nowMonth}월 ${nowDay}일 ${nowHours}시 ${nowMinutes}분 ${nowSeconds}초 ${weekDay}
-//     `;
-
 function main() {
-
-  
 
   let root = document.createElement('div');
   document.body.appendChild(root);
@@ -38,10 +24,22 @@ function main() {
   root.appendChild(timeBox);
   root.id = "timeBox";
 
-  styleSet(root, '100vw', '100vh', '#DAF5FF', '','','','');
-  flexSet(root,'row','center','center');
-  styleSet(timeBox, '100vw', '30vh', '#B0DAFF', '','20px', '60px','white');
-  flexSet(timeBox,'row','center','center');
+  styleSet(root, '100vw', '100vh', '#DAF5FF', '', '', '', '');
+  flexSet(root, 'row', 'center', 'center');
+  styleSet(timeBox, '100vw', '30vh', '#B0DAFF', '', '20px', '60px', 'white');
+  flexSet(timeBox, 'row', 'center', 'center');
 
+  setInterval(() => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", 'http://localhost:3050/start');
+    xhr.send();
+    xhr.addEventListener('load', function () {
+      let res = JSON.parse(xhr.response);
+      let dateString = `
+      ${res.nowYear}년 ${res.nowMonth}월 ${res.nowDay}일 ${res.nowHours}시 ${res.nowMinutes}분 ${res.nowSeconds}초 ${res.weekDay}
+    `;
+      timeBox.innerHTML = dateString;
+    });
+  }, 1000);
 }
 main();
